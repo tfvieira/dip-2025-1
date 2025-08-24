@@ -25,6 +25,8 @@ def linear_combination(i1: np.ndarray, i2: np.ndarray, a1: float, a2: float) -> 
     ### START CODE HERE ###
     ### TODO
     i_out = None
+    i_out  = i1*a1 + i2*a2
+    i_out = i_out.astype(i1.dtype)
     ### END CODE HERE ###
 
     return i_out
@@ -54,7 +56,7 @@ if __name__ == "__main__":
 
     if i1 is None or i2 is None:
         raise FileNotFoundError("One or both images could not be loaded. Check file paths.")
-
+    
     # Create windows
     cv.namedWindow('I1', cv.WINDOW_KEEPRATIO)
     cv.namedWindow('I2', cv.WINDOW_KEEPRATIO)
